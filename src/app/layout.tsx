@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import StyledComponentsRegistry from "@/lib/registry";
-import "./globals.css";
+import StyledComponentsRegistry from '@/lib/registry';
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Contabilidade",
-  description: "Serviços de contabilidade",
+  title: 'Contabilidade',
+  description: 'Serviços de contabilidade',
 };
 
 export default function RootLayout({
