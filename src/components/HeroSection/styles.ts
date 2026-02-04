@@ -67,10 +67,21 @@ export const Badge = styled.span`
   display: block;
 `;
 
-export const ImageWrapper = styled.div`
+export const VideoWrapper = styled.div`
+  width: 476px;
+  height: 326px;
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  overflow: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 100%;
-    height: 476px;
     max-width: 476px;
+    height: 268px;
   }
 `;

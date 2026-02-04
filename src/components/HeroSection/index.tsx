@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@/components/Button';
-import Image from 'next/image';
 import * as S from './styles';
 
 export function HeroSection() {
@@ -26,14 +25,15 @@ export function HeroSection() {
           <S.Badge>CRC SP-2SP038830/O-1</S.Badge>
         </S.Content>
 
-        <S.ImageWrapper>
-          <Image
-            src="/woman-working.png"
-            alt="Profissional sorrindo enquanto trabalha no laptop"
-            width={476}
-            height={326}
+        <S.VideoWrapper>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/2RnnraJoW4w?si=5vfabZuIKmCd7PjA"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           />
-        </S.ImageWrapper>
+        </S.VideoWrapper>
       </S.Container>
     </S.Section>
   );
