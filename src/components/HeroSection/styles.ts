@@ -1,0 +1,76 @@
+import styled from 'styled-components';
+
+export const Section = styled.section`
+  background-color: ${({ theme }) => theme.colors.background};
+  min-width: 100%;
+  width: 100vw;
+  min-height: 100vh;
+  color: ${({ theme }) => theme.colors.text.primary};
+`;
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  height: 100%;
+  min-height: 100vh;
+  padding: ${({ theme }) => theme.spacing.md};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    flex-direction: column;
+    padding: ${({ theme }) => theme.spacing.xl};
+  }
+`;
+
+export const Content = styled.div`
+  width: 473px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 100%;
+    max-width: 473px;
+  }
+`;
+
+export const Title = styled.h1`
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
+  font-size: ${({ theme }) => theme.fonts.size['3xl']};
+  line-height: ${({ theme }) => theme.fonts.lineHeight.tight};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+
+export const Description = styled.p`
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
+  font-size: ${({ theme }) => theme.fonts.size.base};
+  line-height: ${({ theme }) => theme.fonts.lineHeight.normal};
+  color: ${({ theme }) => theme.colors.text.secondary};
+`;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: column;
+  }
+`;
+
+export const Badge = styled.span`
+  font-size: ${({ theme }) => theme.fonts.size.xs};
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
+  color: ${({ theme }) => theme.colors.text.light};
+  margin-top: ${({ theme }) => theme.spacing.md};
+  display: block;
+`;
+
+export const ImageWrapper = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 100%;
+    height: 476px;
+    max-width: 476px;
+  }
+`;
