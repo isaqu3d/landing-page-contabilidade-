@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background-color: ${({ theme }) => theme.colors.background};
-  min-width: 100%;
+  background: radial-gradient(
+    circle at top left,
+    #d4ffd1 0%,
+    ${({ theme }) => theme.colors.background} 40%
+  );
+
   width: 100vw;
   min-height: 100vh;
   color: ${({ theme }) => theme.colors.text.primary};
