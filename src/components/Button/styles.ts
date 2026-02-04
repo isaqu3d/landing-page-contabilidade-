@@ -1,50 +1,66 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
 interface StyledButtonProps {
   $variant: 'primary' | 'secondary';
+  $outline: boolean;
   $fullWidth: boolean;
 }
+
+const getButtonStyles = (
+  variant: 'primary' | 'secondary',
+  outline: boolean,
+  theme: DefaultTheme
+) => {
+  const color = variant === 'primary' ? theme.colors.primary.main : theme.colors.secondary;
+  const hoverColor = variant === 'primary' ? theme.colors.primary.light : '#1d5bb8';
+
+  if (outline) {
+    return css`
+      background-color: transparent;
+      border: 1px solid ${color};
+      color: ${color};
+
+      &:hover {
+        border-color: ${hoverColor};
+        color: ${hoverColor};
+      }
+
+      &:focus-visible {
+        outline: 2px solid ${color};
+        outline-offset: 2px;
+      }
+    `;
+  }
+
+  return css`
+    background-color: ${color};
+    color: ${theme.colors.text.inverse};
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: ${hoverColor};
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${color};
+      outline-offset: 2px;
+    }
+  `;
+};
 
 export const StyledButton = styled.button<StyledButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.875rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-size: ${({ theme }) => theme.fonts.size.base};
-  font-weight: ${({ theme }) => theme.fonts.weight.semibold};
+  font-weight: ${({ theme }) => theme.fonts.weight.medium};
   border-radius: ${({ theme }) => theme.borderRadius.full};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   width: ${({ $fullWidth }) => ($fullWidth ? '100%' : 'auto')};
 
-  ${({ $variant, theme }) =>
-    $variant === 'primary'
-      ? css`
-          background-color: ${theme.colors.primary.main};
-          color: ${theme.colors.text.inverse};
-
-          &:hover {
-            background-color: ${theme.colors.primary.light};
-          }
-
-          &:focus-visible {
-            outline: 2px solid ${theme.colors.primary.main};
-            outline-offset: 2px;
-          }
-        `
-      : css`
-          background-color: ${theme.colors.secondary};
-          color: ${theme.colors.text.inverse};
-
-          &:hover {
-            opacity: 0.9;
-          }
-
-          &:focus-visible {
-            outline: 2px solid ${theme.colors.secondary};
-            outline-offset: 2px;
-          }
-        `}
+  ${({ $variant, $outline, theme }) => getButtonStyles($variant, $outline, theme)}
 
   &:disabled {
     opacity: 0.5;
