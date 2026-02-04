@@ -27,7 +27,12 @@ export function HeroSection() {
         </S.Content>
 
         <S.ImageWrapper>
-          <Image src="/woman-working.png" alt="Mulher trabalhando" width={476} height={326} />
+          <Image
+            src="/woman-working.png"
+            alt="Profissional sorrindo enquanto trabalha no laptop"
+            width={476}
+            height={326}
+          />
         </S.ImageWrapper>
       </S.Container>
     </S.Section>
