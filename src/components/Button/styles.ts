@@ -12,7 +12,7 @@ const getButtonStyles = (
   theme: DefaultTheme
 ) => {
   const color = variant === 'primary' ? theme.colors.primary.main : theme.colors.secondary;
-  const hoverColor = variant === 'primary' ? theme.colors.primary.light : '#1d5bb8';
+  const hoverColor = variant === 'primary' ? theme.colors.primary.light : '#1447e6';
 
   if (outline) {
     return css`
