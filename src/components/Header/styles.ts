@@ -169,7 +169,9 @@ export const MenuButton = styled.button<{ $isOpen?: boolean }>`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    display: ${({ $isOpen }) => ($isOpen ? 'none' : 'flex')};
+    display: flex;
+    visibility: ${({ $isOpen }) => ($isOpen ? 'hidden' : 'visible')};
+    pointer-events: ${({ $isOpen }) => ($isOpen ? 'none' : 'auto')};
   }
 `;
 
