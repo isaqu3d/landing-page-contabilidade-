@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Section = styled.section`
   background: radial-gradient(
     circle at top left,
-    #d4ffd1 0%,
+    #d4ffd1 10%,
     ${({ theme }) => theme.colors.background} 40%
   );
 
@@ -16,7 +16,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.75rem;
+  gap: 3rem;
   height: 100%;
   min-height: 100vh;
   padding: ${({ theme }) => theme.spacing.md};
@@ -24,6 +24,7 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     flex-direction: column;
     padding: ${({ theme }) => theme.spacing.xl};
+    gap: 1.75rem;
   }
 `;
 
