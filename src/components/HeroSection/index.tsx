@@ -20,8 +20,8 @@ export function HeroSection() {
           </Typography>
 
           <S.ButtonGroup>
-            <Button variant="secondary">Planos e Preços</Button>
-            <Button variant="secondary" outline>
+            <Button color="secondary">Planos e Preços</Button>
+            <Button color="secondary" variant="outline">
               Falar com Especialista
             </Button>
           </S.ButtonGroup>
