@@ -1,6 +1,8 @@
 'use client';
 
 import { Button } from '@/components/Button';
+
+import { Typography } from '../Typography';
 import * as S from './styles';
 
 export function HeroSection() {
@@ -8,12 +10,14 @@ export function HeroSection() {
     <S.Section>
       <S.Container>
         <S.Content>
-          <S.Title>Quanto custa a contabilidade online em 2026?</S.Title>
+          <Typography size="3xl" weight="semibold" as="h1" color="textDark">
+            Quanto custa a contabilidade online em 2026?
+          </Typography>
 
-          <S.Description>
+          <Typography color="textTertiary" weight="medium">
             Descubra os preços médios do mercado e veja como a contabilidade.com oferece planos
             acessíveis, abertura grátis e suporte completo para o seu CNPJ.
-          </S.Description>
+          </Typography>
 
           <S.ButtonGroup>
             <Button variant="secondary">Planos e Preços</Button>
