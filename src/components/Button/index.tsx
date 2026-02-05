@@ -3,22 +3,34 @@
 import { ButtonHTMLAttributes } from 'react';
 import * as S from './styles';
 
+type ColorVariant = 'primary' | 'secondary' | 'neutral' | 'success' | 'danger';
+type SizeVariant = 'sm' | 'md' | 'lg';
+type StyleVariant = 'solid' | 'outline' | 'ghost';
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary';
-  outline?: boolean;
+  color?: ColorVariant;
+  size?: SizeVariant;
+  variant?: StyleVariant;
   fullWidth?: boolean;
   children: React.ReactNode;
 }
 
 export function Button({
-  variant = 'secondary',
-  outline = false,
+  color = 'primary',
+  size = 'md',
+  variant = 'solid',
   fullWidth = false,
   children,
   ...props
 }: ButtonProps) {
   return (
-    <S.StyledButton $variant={variant} $outline={outline} $fullWidth={fullWidth} {...props}>
+    <S.StyledButton
+      $color={color}
+      $size={size}
+      $variant={variant}
+      $fullWidth={fullWidth}
+      {...props}
+    >
       {children}
     </S.StyledButton>
   );
