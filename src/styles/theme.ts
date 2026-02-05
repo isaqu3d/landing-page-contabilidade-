@@ -1,20 +1,22 @@
 export const theme = {
   colors: {
     primary: {
-      main: '#2BBE41',
-      light: '#83E87C',
-      lighter: '#D4FFD1',
+      main: '#2BBE41', // P500
+      light: '#83E87C', // P200
+      lighter: '#D4FFD1', // P50
     },
     secondary: '#2B7ADF',
     neutral: {
-      white: '#FFFFFF',
-      light: '#E0E1E2',
-      medium: '#C6C8CB',
+      white: '#FFFFFF', // N0
+      light: '#E0E1E2', // N100
+      medium: '#C6C8CB', // N200
     },
     background: '#FFFFFF',
     text: {
       primary: '#1A1A1A',
       secondary: '#666666',
+      tertiary: '#41484E',
+      dark: '#1E2124',
       light: '#999999',
       inverse: '#FFFFFF',
     },

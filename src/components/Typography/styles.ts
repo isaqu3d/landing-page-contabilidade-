@@ -6,7 +6,9 @@ type ColorVariant =
   | 'textPrimary'
   | 'textSecondary'
   | 'textLight'
-  | 'textInverse';
+  | 'textInverse'
+  | 'textTertiary'
+  | 'textDark';
 
 type SizeVariant = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
 
@@ -26,6 +28,8 @@ const getColor = (color: ColorVariant, theme: DefaultTheme): string => {
     textSecondary: theme.colors.text.secondary,
     textLight: theme.colors.text.light,
     textInverse: theme.colors.text.inverse,
+    textTertiary: theme.colors.text.tertiary,
+    textDark: theme.colors.text.dark,
   };
 
   return colorMap[color];
