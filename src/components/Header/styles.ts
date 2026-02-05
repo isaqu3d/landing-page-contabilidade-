@@ -33,6 +33,12 @@ export const Logo = styled.a`
   color: ${({ theme }) => theme.colors.primary.main};
   text-decoration: none;
   cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
+    outline-offset: 2px;
+  }
 
   span {
     color: ${({ theme }) => theme.colors.text.primary};
@@ -85,7 +91,8 @@ export const NavLink = styled.a`
   font-weight: ${({ theme }) => theme.fonts.weight.medium};
   color: ${({ theme }) => theme.colors.text.primary};
   text-decoration: none;
-  padding: ${({ theme }) => theme.spacing.sm} 0;
+  padding: ${({ theme }) => theme.spacing.sm};
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   transition: color 0.2s ease-in-out;
   cursor: pointer;
 
@@ -93,9 +100,14 @@ export const NavLink = styled.a`
     color: ${({ theme }) => theme.colors.primary.main};
   }
 
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
+    outline-offset: 2px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     font-size: ${({ theme }) => theme.fonts.size.base};
-    padding: ${({ theme }) => theme.spacing.sm} 0;
+    padding: ${({ theme }) => theme.spacing.sm};
   }
 `;
 
@@ -119,11 +131,17 @@ export const LoginButton = styled.a`
   color: ${({ theme }) => theme.colors.primary.main};
   text-decoration: none;
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   transition: color 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.colors.primary.light};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
+    outline-offset: 2px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -140,9 +158,15 @@ export const MenuButton = styled.button<{ $isOpen?: boolean }>`
   height: 40px;
   background: transparent;
   border: none;
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   cursor: pointer;
   z-index: 99;
   color: ${({ theme }) => theme.colors.text.primary};
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
+    outline-offset: 2px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     display: ${({ $isOpen }) => ($isOpen ? 'none' : 'flex')};
@@ -158,8 +182,14 @@ export const CloseButton = styled.button`
   height: 40px;
   background: transparent;
   border: none;
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   cursor: pointer;
   color: ${({ theme }) => theme.colors.text.primary};
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
+    outline-offset: 2px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     display: flex;
