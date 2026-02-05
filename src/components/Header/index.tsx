@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/Button';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as S from './styles';
 
 const navItems = [
@@ -18,21 +18,32 @@ export function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMenuOpen]);
+
   return (
     <S.HeaderWrapper>
       <S.Container>
-        <S.Logo href="/">
+        <S.Logo href="/" aria-label="Ir para página inicial - contabilidade.com">
           contabilidade<span>.com</span>
         </S.Logo>
 
-        <S.Nav $isOpen={isMenuOpen}>
-          <S.CloseButton onClick={closeMenu} aria-label="Fechar menu">
-            <X size={24} />
+        <S.Nav $isOpen={isMenuOpen} aria-label="Menu principal" role="navigation">
+          <S.CloseButton onClick={closeMenu} aria-label="Fechar menu de navegação">
+            <X size={24} aria-hidden="true" />
           </S.CloseButton>
 
-          <S.NavList>
+          <S.NavList role="list">
             {navItems.map((item) => (
-              <S.NavItem key={item.label}>
+              <S.NavItem key={item.label} role="listitem">
                 <S.NavLink href={item.href} onClick={closeMenu}>
                   {item.label}
                 </S.NavLink>
@@ -46,11 +57,21 @@ export function Header() {
           </S.NavActions>
         </S.Nav>
 
-        <S.MenuButton $isOpen={isMenuOpen} onClick={toggleMenu} aria-label="Abrir menu">
-          <Menu size={24} />
+        <S.MenuButton
+          $isOpen={isMenuOpen}
+          onClick={toggleMenu}
+          aria-label="Abrir menu de navegação"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-nav"
+        >
+          <Menu size={24} aria-hidden="true" />
         </S.MenuButton>
 
-        <S.Overlay $isOpen={isMenuOpen} onClick={closeMenu} />
+        <S.Overlay
+          $isOpen={isMenuOpen}
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
       </S.Container>
     </S.HeaderWrapper>
   );

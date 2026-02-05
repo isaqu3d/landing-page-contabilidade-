@@ -34,8 +34,10 @@ export function HeroSection() {
             width="560"
             height="315"
             src="https://www.youtube.com/embed/2RnnraJoW4w?si=5vfabZuIKmCd7PjA"
-            title="YouTube video player"
+            title="Vídeo explicativo sobre contabilidade online - contabilidade.com"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
           />
         </S.VideoWrapper>
       </S.Container>
