@@ -116,14 +116,14 @@ export const NavActions = styled.div`
 export const LoginButton = styled.a`
   font-size: ${({ theme }) => theme.fonts.size.sm};
   font-weight: ${({ theme }) => theme.fonts.weight.medium};
-  color: ${({ theme }) => theme.colors.text.primary};
+  color: ${({ theme }) => theme.colors.primary.main};
   text-decoration: none;
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
   transition: color 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary.main};
+    color: ${({ theme }) => theme.colors.primary.light};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {

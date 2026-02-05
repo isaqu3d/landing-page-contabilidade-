@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { X, Menu } from 'lucide-react';
 import { Button } from '@/components/Button';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 import * as S from './styles';
 
 const navItems = [
@@ -42,7 +42,7 @@ export function Header() {
 
           <S.NavActions>
             <S.LoginButton href="#login">Entrar</S.LoginButton>
-            <Button variant="primary">Abrir CNPJ grátis</Button>
+            <Button color="primary">Abrir CNPJ grátis</Button>
           </S.NavActions>
         </S.Nav>
 
