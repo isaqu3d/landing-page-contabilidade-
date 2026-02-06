@@ -32,6 +32,14 @@ export const ImageWrapper = styled.div`
   overflow: hidden;
   order: 2;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     order: 1;
     flex-shrink: 0;
@@ -49,29 +57,6 @@ export const Content = styled.div`
     text-align: left;
     margin-bottom: 0;
     flex: 1;
-  }
-`;
-
-export const Title = styled.h2`
-  font-size: ${({ theme }) => theme.fonts.size['2xl']};
-  font-weight: ${({ theme }) => theme.fonts.weight.bold};
-  color: ${({ theme }) => theme.colors.secondary};
-  line-height: ${({ theme }) => theme.fonts.lineHeight.tight};
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    font-size: ${({ theme }) => theme.fonts.size['3xl']};
-  }
-`;
-
-export const Paragraph = styled.p`
-  font-size: ${({ theme }) => theme.fonts.size.base};
-  color: ${({ theme }) => theme.colors.text.secondary};
-  line-height: ${({ theme }) => theme.fonts.lineHeight.relaxed};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-
-  &:last-child {
-    margin-bottom: 0;
   }
 `;
 
