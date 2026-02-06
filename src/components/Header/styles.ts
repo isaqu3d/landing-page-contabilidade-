@@ -27,10 +27,6 @@ export const Container = styled.div`
 export const Logo = styled.a`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.xs};
-  font-size: ${({ theme }) => theme.fonts.size.xl};
-  font-weight: ${({ theme }) => theme.fonts.weight.bold};
-  color: ${({ theme }) => theme.colors.primary.main};
   text-decoration: none;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borderRadius.sm};
@@ -39,9 +35,25 @@ export const Logo = styled.a`
     outline: 2px solid ${({ theme }) => theme.colors.primary.main};
     outline-offset: 2px;
   }
+`;
 
-  span {
-    color: ${({ theme }) => theme.colors.text.primary};
+export const LogoDesktop = styled.img`
+  display: none;
+  height: 32px;
+  width: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    display: block;
+  }
+`;
+
+export const LogoMobile = styled.img`
+  display: block;
+  height: 28px;
+  width: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    display: none;
   }
 `;
 

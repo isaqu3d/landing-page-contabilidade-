@@ -33,7 +33,8 @@ export function Header() {
     <S.HeaderWrapper>
       <S.Container>
         <S.Logo href="/" aria-label="Ir para página inicial - contabilidade.com">
-          contabilidade<span>.com</span>
+          <S.LogoDesktop src="/logo.svg" alt="contabilidade.com" />
+          <S.LogoMobile src="/logo-menu.svg" alt="contabilidade.com" />
         </S.Logo>
 
         <S.Nav $isOpen={isMenuOpen} aria-label="Menu principal" role="navigation">
