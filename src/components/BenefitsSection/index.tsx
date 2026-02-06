@@ -18,7 +18,13 @@ export function BenefitsSection() {
         </S.ImageWrapper>
 
         <S.Content>
-          <Typography weight="medium" size="3xl" as="h1">
+          <Typography
+            weight="medium"
+            size="3xl"
+            as="h1"
+            style={{ marginBottom: 32 }}
+            color="textDark"
+          >
             O preço da contabilidade no Brasil
           </Typography>
 
