@@ -10,7 +10,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  max-width: 900px;
+  max-width: 992px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -38,6 +38,7 @@ export const ImageWrapper = styled.div`
     object-fit: cover;
     object-position: center bottom;
     display: block;
+    transform: scaleX(-1);
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
