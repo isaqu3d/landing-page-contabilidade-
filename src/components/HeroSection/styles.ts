@@ -37,6 +37,7 @@ export const Content = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 100%;
     max-width: 473px;
+    padding-top: ${({ theme }) => theme.spacing['3xl']};
   }
 `;
 
