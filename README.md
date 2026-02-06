@@ -23,7 +23,7 @@ Além disso, foram implementados o **Header** e **Footer** para completar a estr
 git clone git@github.com:isaqu3d/landing-page-contabilidade.git
 
 # Entrar na pasta do projeto
-cd landipage-contabilidade
+cd landing-page-contabilidade
 
 # Instalar dependências
 npm install
