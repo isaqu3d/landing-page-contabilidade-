@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header`
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.background};
   transition: background-color 0.3s ease-in-out;
   border-bottom: solid 1px ${({ theme }) => theme.colors.border};
 `;
