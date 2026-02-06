@@ -1,6 +1,6 @@
 'use client';
 
-import { Header, HeroSection } from '@/components';
+import { Footer, Header, HeroSection } from '@/components';
 import { BenefitsSection } from '@/components/BenefitsSection';
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <BenefitsSection />
+      <Footer />
     </main>
   );
 }
